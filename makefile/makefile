@@ -5,7 +5,7 @@ fmt:
 .PHONY:fmt
 
 lint: fmt
-	go lint ./...
+	golint ./...
 .PHONY:lint
 
 vet: fmt
