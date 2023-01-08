@@ -1,23 +1,14 @@
 package main
 
-func scoreboardManager(in <-chan func(map[string]int), done <-chan struct{}) {
-	scoreboard := map[string]int {}
-	for {
-		select {
-		case <-done:
-			return
-		case f := <-in:
-			f(scoreboard)
-		}
-	}
-}
+import (
+	"fmt"
+	sharedRW "sharedRW/chanScoreboard"
+)
 
-type ChannelScoreboardManager chan func(map[string]int)
-func NewChannelScoreboardManager() (ChannelScoreboardManager, func()) {
-	ch := make(ChannelScoreboardManager)
-	done := make(chan struct{})
-	go scoreboardManager(ch, done)
-	return ch, func() {
-		close(done)//
-	}
+func main() {
+	sbSharedRW, done := sharedRW.NewChannelScoreboardManger()
+	sbSharedRW.Update("a", 5)
+	fmt.Println(sbSharedRW.Read("a"))
+	fmt.Println(sbSharedRW.Read("b"))
+	done()
 }
