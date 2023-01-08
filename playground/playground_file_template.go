@@ -1,5 +1,4 @@
-// You can edit this code!
-// Click here and start typing.
+// This shows how you can use file system in go playground.
 package main
 
 import "play.ground/hello"

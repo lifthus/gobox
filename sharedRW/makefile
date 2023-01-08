@@ -1,4 +1,3 @@
-# THis is basic template of makefile for Go
 .DEFAULT_GOAL := build
 
 fmt:
