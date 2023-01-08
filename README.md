@@ -10,7 +10,7 @@
 
 - Makefile
 
-  The code below is basic template of makefile
+  The code below is basic template of makefile for Go
 
 ```
 .DEFAULT_GOAL := build
