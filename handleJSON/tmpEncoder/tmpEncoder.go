@@ -51,7 +51,7 @@ func Dec(tmpFile *os.File, close func()) error {
 	return nil
 }
 
-func UsingEncDec() {
+func UsingTmpEncoder() {
 	toFile := Person{
 		Name: "Jeonghun",
 		Age:  25,

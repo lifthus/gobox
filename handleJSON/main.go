@@ -1,9 +1,13 @@
 package main
 
 import (
+	"fmt"
+	"handleJSON/streamEncoder"
 	"handleJSON/tmpEncoder"
 )
 
 func main() {
-	tmpEncoder.UsingEncDec()
+	tmpEncoder.UsingTmpEncoder()
+	fmt.Println("------")
+	streamEncoder.UsingStreamEncoder()
 }
