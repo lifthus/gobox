@@ -16,7 +16,7 @@ func UsingStreamEncoder() {
 	var t tmpEncoder.Person
 
 	dec := json.NewDecoder(strings.NewReader(data))
-	for dec.More() {
+	for dec.More() { // saving each single jason at t at each time.
 		err := dec.Decode(&t)
 		if err != nil {
 			panic(err)
