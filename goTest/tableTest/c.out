@@ -1,0 +1,9 @@
+mode: set
+goTest/tableTest/tableTest.go:8.53,10.12 1 1
+goTest/tableTest/tableTest.go:11.11,12.26 1 1
+goTest/tableTest/tableTest.go:13.11,14.26 1 1
+goTest/tableTest/tableTest.go:15.11,16.26 1 1
+goTest/tableTest/tableTest.go:17.11,18.16 1 1
+goTest/tableTest/tableTest.go:21.3,21.26 1 1
+goTest/tableTest/tableTest.go:22.10,23.50 1 0
+goTest/tableTest/tableTest.go:18.16,20.4 1 1
