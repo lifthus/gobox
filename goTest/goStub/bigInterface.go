@@ -1,7 +1,5 @@
 package goStub
 
-import "fmt"
-
 type Person int
 type User Person
 type Pet struct {
@@ -26,11 +24,15 @@ func (l Logic) GetPetNames(userId string) ([]string, error) {
 	if err != nil {
 		return nil, err
 	}
-	out := make([]string, len(pets))
+	out := make([]string, 0)
 	for _, p := range pets {
 		out = append(out, p.Name)
 	}
-	return out, nil
+	if len(out) != 0 {
+		return out, nil
+	} else {
+		return nil, nil
+	}
 }
 
 type GetPetNamesStub struct {
@@ -42,9 +44,9 @@ func (ps GetPetNamesStub) GetPets(userID string) ([]Pet, error) {
 	case "1":
 		return []Pet{{Name: "Bubbles"}}, nil
 	case "2":
-		return []Pet{{Name: "Stamply"}, {Name: "Snowball II"}}, nil
+		return []Pet{{Name: "Stampy"}, {Name: "Snowball II"}}, nil
 	default:
-		return nil, fmt.Errorf("invalid id: %s", userID)
+		return nil, nil // fmt.Errorf("invalid id: %s", userID)
 	}
 }
 
@@ -53,7 +55,7 @@ func (ps GetPetNamesStub) GetPets(userID string) ([]Pet, error) {
 type EntitiesStub struct {
 	getUser     func(id string) (User, error)
 	getPets     func(userID string) ([]Pet, error)
-	getChildren func(userID string) ([]Pet, error)
+	getChildren func(userID string) ([]Person, error)
 	getFriends  func(userID string) ([]Person, error)
 	saveUser    func(user User) error
 }
@@ -64,4 +66,14 @@ func (es EntitiesStub) GetUser(id string) (User, error) {
 
 func (es EntitiesStub) GetPets(userID string) ([]Pet, error) {
 	return es.getPets(userID)
+}
+
+func (es EntitiesStub) GetChildren(userID string) ([]Person, error) {
+	return es.getChildren(userID)
+}
+func (es EntitiesStub) GetFriends(userID string) ([]Person, error) {
+	return es.getFriends(userID)
+}
+func (es EntitiesStub) SaveUser(user User) error {
+	return es.saveUser(user)
 }
