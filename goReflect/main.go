@@ -4,7 +4,9 @@ import (
 	"encoding/csv"
 	"fmt"
 	"goReflect/basicReflect"
+	"goReflect/makingFunc"
 	"goReflect/marshallingCSV"
+	"goReflect/slowFilter"
 	"strings"
 )
 
@@ -37,4 +39,8 @@ Martha,37,"true"
 	w := csv.NewWriter(sb)
 	w.WriteAll(out)
 	fmt.Println(sb)
+
+	makingFunc.UsingMakeFunc()
+
+	slowFilter.UsingSlowFilter()
 }
