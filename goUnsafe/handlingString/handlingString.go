@@ -1,4 +1,4 @@
-package hadnlingString
+package handlingString
 
 import (
 	"fmt"
@@ -20,7 +20,7 @@ func GetStringHeader() {
 	runtime.KeepAlive(s)
 }
 
-func GetSliceHeasder() {
+func GetSliceHeader() {
 	s := []int{10, 20, 30}
 	sHdr := (*reflect.SliceHeader)(unsafe.Pointer(&s))
 	fmt.Println(sHdr.Len)
