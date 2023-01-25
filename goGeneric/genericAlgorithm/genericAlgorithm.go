@@ -1,6 +1,8 @@
 package genericAlgorithm
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // Map converts []T1 to []T2 using mapping function.
 // this function has two type parameters, T1 and T2.
