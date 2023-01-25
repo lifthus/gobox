@@ -1,5 +1,7 @@
 package genericAlgorithm
 
+import "fmt"
+
 // Map converts []T1 to []T2 using mapping function.
 // this function has two type parameters, T1 and T2.
 // it works with slices of every type.
@@ -30,4 +32,20 @@ func Filter[T any](s []T, f func(T) bool) []T {
 		}
 	}
 	return r
+}
+
+func UsingAbove() {
+	words := []string{"One", "Potato", "Two", "Potato"}
+	filtered := Filter(words, func(s string) bool {
+		return s != "Potato"
+	})
+	fmt.Println(filtered)
+	lengths := Map(filtered, func(s string) int {
+		return len(s)
+	})
+	fmt.Println(lengths)
+	sum := Reduce(lengths, 0, func(acc int, val int) int {
+		return acc + val
+	})
+	fmt.Println(sum)
 }
