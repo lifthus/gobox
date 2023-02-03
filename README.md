@@ -22,7 +22,7 @@ export PATH=$PATH:$GOPATH/bin
 
   The code below is basic template of makefile for Go. the indent must be tab.
 
-```
+```make
 .DEFAULT_GOAL := build
 
 fmt:
