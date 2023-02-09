@@ -16,7 +16,10 @@ export PATH=$PATH:$GOPATH/bin
 - go vet ./... : capturing unintentional but syntactically correct code
 - golanci-lint run : integrating code quality tools ( with .golangci.yml file )
 - go build -o [output] [target]
-- go get [repository]
+
+# Commands about module system 
+- go list -m -versions [module] : go list shows used packages. -m flag make it show used module instead of pkgs. and -version flag module's available versions.
+- go get [repository] : updates dependency of module. (plus attach like @v1.2.0 for specific version)
 
 - Makefile ( make, make fmt, make build . . . )
 
